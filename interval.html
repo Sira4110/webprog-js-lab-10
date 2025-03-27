@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interval Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        #counter {
+            font-size: 48px;
+            color: #007bff;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interval Task</h1>
+    <p id="counter">0</p>
+    <button id="startInterval">Start Interval</button>
+    <button id="stopInterval">Stop Interval</button>
+
+    <script>
+        // Попередній JavaScript код залишається без змін
+        const counterElement = document.getElementById('counter');
+        const startButton = document.getElementById('startInterval');
+        const stopButton = document.getElementById('stopInterval');
+        
+        let intervalId;
+        let count = 0;
+
+        startButton.addEventListener('click', () => {
+            intervalId = setInterval(() => {
+                count++;
+                counterElement.textContent = count;
+            }, 1000);
+        });
+
+        stopButton.addEventListener('click', () => {
+            clearInterval(intervalId);
+        });
+    </script>
+    <a href="index.html" style="display: block; margin-top: 20px; color: #007bff; text-decoration: none;">Назад до головної</a>
+</body>
+</html>
